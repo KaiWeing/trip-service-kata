@@ -7,7 +7,13 @@ import org.craftedsw.tripservicekata.user.User;
 
 public class TripDAO {
 
-	public static List<Trip> findTripsByUser(User user) {
+	private static final TripDAO INSTANCE = new TripDAO();
+
+	public static TripDAO getInstance() {
+		return INSTANCE;
+	}
+
+	public List<Trip> findTripsByUser(User user) {
 		throw new CollaboratorCallException(
 				"TripDAO should not be invoked on an unit test.");
 	}
